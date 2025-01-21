@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color: black;
+            font-family: Poppins, sans-serif;
+        }
+        .container {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            margin-top: 40px;
+            margin-bottom: 100px;
+            height: 590px;
+            width: 3500px;
+            padding: 20px 60px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .cont{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .input {
+            width: 350px;
+            height: 30px;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .btn {
+            text-decoration: none;
+            color: black;
+            background-color: #E55C3E;
+            border: none;
+            padding: 10px 30px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #d44a29; 
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #b3361b; 
+            transform: scale(0.98);
+        }
+        header {
+            color: #19053d;
+        }
+        .content{
+            position: fixed;
+            top: 80px;
+            right: 50px;
+            bottom: 40px;
+            width: 580px;
+            height: 210px;
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        .content1{
+            position: fixed;
+            top: 380px;
+            right: 50px;
+            bottom: 40px;
+            width: 580px;
+            height: 190px;
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        .devices{
+            height: 40px;
+            width: 100%;
+            font-size: 15px;
+            background-color: rgb(134, 156, 229);
+            text-align: center;
+        }
+        .result {
+            text-align: center; 
+            margin-top: 20px; 
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #19053d;
+        }
+        table th {
+            background-color: #19053d;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: white;
+        }
+        #loading {
+            width: 50px;
+            height: 50px;
+            margin-top: 30px;
+            border: 5px solid #ccc;
+            border-top: 5px solid #E55C3E;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <title>IP Scanner</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="welcome">Scan External IP Address</h1>
+        </header>
+        <form id="scan-form" method="post" action="{% url 'scanExternal' %}">
+            {% csrf_token %}
+            <div class="cont">
+                <input type="text" id="ip_address" name="ip_address" placeholder="Enter the IP Address " class="input" required>
+                <button type="submit" class="btn">Scan</button>
+            </div>
+            <div id="loading" style="display: none;">
+                <div class="spinner"></div></div>
+        </form>
+
+        <div class="content">
+            <h2>"Empower Your Network Security"</h2>
+            <p>This scanner enables you to efficiently analyze and monitor IP addresses within your network, ensuring a comprehensive view of connected devices.</p>
+        </div>
+
+        <div class="content1">
+            <h2>"A Step Towards Safer Networks"</h2>
+            <p>From device discovery to secure monitoring, this IP Scanner is your first line of defense against unauthorized access and network vulnerabilities.</p>
+        </div>
+        <div id="error-container" class="error-message"></div>
+
+        <div id="result-container" class="result"></div>
+
+    </div>
+
+    <script>
+        const form = document.getElementById('scan-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the form from reloading the page
+            
+            const formData = new FormData(form);
+            const errorContainer = document.getElementById('error-container');
+            const resultContainer = document.getElementById('result-container');
+            const loading = document.getElementById('loading'); // Get the loading element
+            errorContainer.textContent = ''; // Clear previous errors
+            resultContainer.innerHTML = ''; // Clear previous results
+            loading.style.display = 'block'; // Show the loading animation
+
+        try {
+            const response = await fetch('{% url "scan" %}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        });
+
+        // Hide the loading spinner once the response is received
+        loading.style.display = 'none';
+
+        if (response.ok) {
+            const data = await response.json();
+
+            // Display status message
+            if (data.status) {
+                resultContainer.innerHTML = `<p><strong>Status:</strong> ${data.status}</p>`;
+            }
+
+            // Display alert message if any
+            if (data.alert_message) {
+                // Trigger a JavaScript alert box for new device detection
+                alert(data.alert_message);
+            }
+
+            // Display total number of devices detected
+            if (data.total_devices !== undefined) {
+                resultContainer.innerHTML += `<div class = "devices"><p><strong>Total Devices Detected:</strong> ${data.total_devices}</p></div>`;
+            }
+
+            // Display devices in a table
+            if (data.devices && data.devices.length > 0) {
+                const table = document.createElement('table');
+                table.style.width = '100%';
+                table.style.borderCollapse = 'collapse';
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>MAC</th>
+                            <th>Hostname</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.devices.map(device => `
+                            <tr>
+                                <td>${device.ip}</td>
+                                <td>${device.mac}</td>
+                                <td>${device.hostname}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                resultContainer.appendChild(table);
+            } else if (!data.devices || data.devices.length === 0) {
+                resultContainer.innerHTML += `<p>No devices found.</p>`;
+            }
+        } else {
+            const errorData = await response.json();
+            errorContainer.textContent = errorData.status || 'An error occurred while scanning.';
+        }
+    } catch (error) {
+        // Hide the loading spinner in case of an error
+        loading.style.display = 'none';
+        errorContainer.textContent = 'Unable to connect to the server.';
+            }
+        });
+    </script>
+</body>
+</html>

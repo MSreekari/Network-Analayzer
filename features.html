@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..300;1,100..200&family=PT+Sans:ital,wght@0,100;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMr9gE5Jt9C2jIjWhYYL1ZbXLRO/vs8GVr1j5k" crossorigin="anonymous">
+    <style>
+        body{
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+        }
+        h1{
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            font-size: 60px;
+            font-weight: 100px;
+            line-height: 70px;
+            color: #E5C58F;
+            margin-top: 120px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        p{
+            text-align: center;
+            color : white;
+            font-family: "Montserrat", sans-serif;
+            margin-top: 50px;
+            line-height: 28px;
+            font-size: 18px;
+        }
+        h3{
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px;
+            line-height: 20px;
+            color: linear-gradient(135deg, #20005a 60%, 80%, #4a2371);
+            font-weight: bolder;
+        }
+        h4{
+            color: linear-gradient(135deg, #20005a 60%, 80%, #4a2371);
+            font-size: 12px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            width: 100%;
+            height: auto;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            margin-top: 80px;
+            margin-bottom: 50px;
+        }
+        .edu, .wifi, .alerts {
+            width: 30px;
+            height: 30px;
+            border: 3px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }    
+        .card1{
+            width: 450px;
+            height: 220px; 
+            display: flex;
+            align-items: center;
+            text-align: start;
+            font-family: "Montserrat", sans-serif;
+            font-size: 20px;
+            font-weight: 100px;
+            line-height: 20px;
+            border-style: solid;
+            border-color: #E5C58F;
+            background-color: #E5C58F;
+            border-width: 0.5px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+            opacity: 0.89;
+        }
+        .card1{
+            display: flex;
+            text-align: start;
+            flex-direction: column;
+        }
+        
+    </style>
+    <title>Features</title>
+</head>
+<body>
+    <h1>What's in it for you?</h1>
+    <p>Gain all the skills you need to kick-start your professional <br> journey in cybersecurity through our fundamental insights.</p>
+    <div class="container">
+        <div class="card1">
+            <div class="edu">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3>Educational Insights on Networking</h3>
+            <h4>It offers easy-to-understand resources and tutorials on networking concepts.</h4>
+        </div>
+            <div class="card1">
+                <div class="wifi">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+                <h3>IP Address scanner</h3>
+                <h4>It detects and maps active devices on a network by scanning a range of IP addresses.</h4>
+            </div>
+        <div class="card1">
+            <div class="alerts">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <h3>Dashboard for alerts</h3>
+            <h4>It generates alerts in the dashboard section based on the scans.</h4>
+        </div>
+    </div>
+</body>
+</html>

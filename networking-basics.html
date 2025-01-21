@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color : white;
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        h1{
+            color: #E5C58F;
+            font-weight: 70px;
+            font-style: normal;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 70px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        header {
+            background-color: #041C22; 
+            padding: 20px; 
+            text-align: center;
+        }
+        h2 {
+            color: #E5C58F;
+            font-size: 30px;
+        }
+        p{
+            font-size: 19px;
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0;
+        }
+        nav ul li {
+            display: inline; 
+            margin: 0 15px; 
+        }
+        nav ul li a {
+            color: #E5C58F; 
+            text-decoration: none; 
+        }
+        nav ul li a:hover {
+            text-decoration: underline; 
+        }
+        main {
+            font-size: 19px;
+            padding: 20px; 
+            flex: 1; 
+        }
+        .content-box {
+            color: white;
+            border-radius: 15px; 
+            margin-left: 70px;
+            margin-right: 10px;
+            padding: 10px; 
+            width: 89%; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .video-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 30px;
+        }
+        .video-container iframe {
+            width: 990px;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #050836; 
+            color: #E5C58F; 
+            text-align: center; 
+            padding: 10px; 
+        }
+    </style>
+    <title>Networking Basics</title>
+</head>
+<body>
+    <div class = "content-box">
+        <div class="video-container">
+            <h1>Networking Basics: Dive into the depth of networking</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/oHQvWa6J8dU?si=Omsb3OaJBSS6PkKx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    <h2>How to Start?</h2>
+    <p>Begin with foundational concepts like IP addresses, subnets, routers, switches, MAC addresses, and OSI model layers. These will help you understand the fundamentals of how devices communicate in a network.</p>
+    <h2>Open Systems Interconnection Model (OSI):</h2>
+    <p>The OSI (Open Systems Interconnection) Model is a framework developed by the International Organization for Standardization (ISO) that standardizes how different networking protocols communicate across various devices. It consists of seven layers, each with a specific role in managing data transmission across networks. Here’s a breakdown of each layer:
+        <ol>
+            <li>Physical Layer
+                <ul>
+                <li>Purpose: Handles the physical connection between devices.</li>
+                <li>Key Concepts: Transmission of raw data (bits) over physical mediums like cables (e.g., Ethernet) or radio waves (e.g., Wi-Fi).</li>
+                <li>Devices: Cables, hubs, repeaters, and other hardware components that deal with raw bit transmission.</li>
+                </ul>
+            </li><li>Data Link Layer
+    <ul>
+    <li>Purpose: Ensures reliable data transfer across the physical network, handling errors and framing.</li>
+    <li>Key Concepts: MAC (Media Access Control) addressing, error checking, and flow control.</li>
+    <li>Devices: Switches and bridges that operate using MAC addresses to determine device locations within a network.</li>
+    </ul>    </li>
+    <li>Network Layer
+<ul>
+    <li>Purpose: Manages data routing, packet forwarding, and addressing so data can travel across interconnected networks.</li>
+    <li>Key Concepts: IP (Internet Protocol) addressing, routing, and packet forwarding.</li>
+    <li>Routers are primarily responsible for determining the best path for data to travel.</li> 
+    </ul> </li>
+    <li>Transport Layer
+    <ul>
+    <li>Purpose: Provides end-to-end communication and error recovery, ensuring data integrity.</li>
+    <li>Concepts: Protocols like TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) manage data delivery and flow control.</li>
+    <li>Devices: Although this layer operates within software, firewalls can interact here by filtering traffic based on port numbers.</li>
+    </ul></li>
+    <li>Session Layer</li>
+    <ul>
+    <li>Purpose: Manages and maintains communication sessions between devices.</li>
+    <li>Key Concepts: Session establishment, maintenance, and termination; synchronizing data exchange between applications.</li>
+    <li>Devices: Primarily operates in software, often managed by the operating system.</li>
+    </ul>
+    <li>Presentation Layer</li>
+    <ul>
+    <li>Purpose: Transforms data formats so applications can understand it, handling encryption, compression, and translation.</li>
+    <li>Key Concepts: Data translation, encryption (e.g., HTTPS encryption), and compression.</li>
+    <li>Devices: This layer functions at the software level, often integrated within applications or OS-level software.</li>
+    </ul>
+    <li>Application Layer</li>
+    <ul>
+    <li>Purpose: Interfaces directly with end-user applications, facilitating data communication for specific application services.</li>
+    <li>Key Concepts: Protocols such as HTTP (web browsing), FTP (file transfer), SMTP (email), and DNS (domain name resolution).</li>
+    <li>Devices: Any end-user device or software interacting with network data (e.g., web browsers, email clients).</li>
+    </ul>
+    </ol>
+    </p>
+    <p>Networking, or computer networking, is the process of connecting two or more computing devices, such as desktop computers, mobile devices, routers or applications, to enable the transmission and exchange of information and resources. Networked devices rely on communications protocols—rules that describe how to transmit or exchange data across a network—to share information over physical or wireless connections.Before contemporary networking practices, engineers would have to physically move computers to share data between devices, which was an unpleasant task at a time when computers were large and unwieldy. To simplify the process (especially for government workers), the Department of Defense funded the creation of the first functioning computer network (eventually named ARPANET) in the late 1960s. Since then, networking practices—and the computer systems that drive them—have evolved tremendously. Today’s computer networks facilitate large-scale inter-device communication for every business, entertainment and research purpose. The internet, online search, email, audio and video sharing, online commerce, live-streaming and social media all exist because of advancements in computer networking.</p>
+    <main>
+        <section id="introduction">
+            <h2>Introduction to Networking</h2>
+            <p>Networking is the practice of connecting computers and other devices together to share resources.</p>
+        </section>
+
+        <section id="types">
+            <h2>Types of Networks</h2>
+            <ul>
+                <li><strong>LAN (Local Area Network):</strong> A network that connects computers within a limited area, such as a home or office.</li>
+                <li><strong>WAN (Wide Area Network):</strong> A network that covers a broad area, connecting multiple LANs, like the internet.</li>
+                <li><strong>MAN (Metropolitan Area Network):</strong> A network that spans a city or a large campus.</li>
+            </ul>
+        </section>
+
+        <section id="networking-devices">
+            <h2>Networking Devices</h2>
+            <ul>
+                <li><strong>Router:</strong> A device that forwards data packets between computer networks.</li>
+                <li><strong>Switch:</strong> A device that connects devices on a network and uses MAC addresses to forward data to the correct destination.</li>
+                <li><strong>Access Point:</strong> A device that allows wireless devices to connect to a wired network using Wi-Fi.</li>
+            </ul>
+        </section>
+
+        <section id="protocols">
+            <h2>Common Networking Protocols</h2>
+            <ul>
+                <li><strong>TCP/IP:</strong> The fundamental protocol suite for the internet.</li>
+                <li><strong>HTTP/HTTPS:</strong> Protocols for transferring hypertext (web pages).</li>
+                <li><strong>FTP:</strong> A protocol used for transferring files over a network.</li>
+            </ul>
+        </section>
+        <section id="best-practices">
+            <h2>Networking Best Practices</h2>
+            <ul>
+                <li>Keep your software and firmware up to date.</li>
+                <li>Use strong passwords and change them regularly.</li>
+                <li>Implement a firewall for added security.</li>
+            </ul>
+        </section>
+    </main>
+</div>
+    <footer>
+        <p>&copy; 2024 Network Analyser. All rights reserved.</p>
+    </footer>
+</body>
+</html>

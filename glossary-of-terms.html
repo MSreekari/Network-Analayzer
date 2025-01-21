@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+            color : #E5C58F;
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        h1{
+            color: #E5C58F;
+            font-weight: 70px;
+            font-style: normal;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 70px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        header {
+            padding: 20px; 
+            text-align: center;
+        }
+        h2 {
+            color: #E5C58F;
+            font-size: 30px;
+        }
+        p{
+            font-size: 19px;
+        }
+        a{
+            color: #E5C58F;
+        }
+        nav ul {
+            list-style-type: none; 
+            padding: 0; 
+        }
+        nav ul li {
+            display: inline; 
+            margin: 0 15px; 
+        }
+        nav ul li a {
+            color: #E5C58F; 
+            text-decoration: none; 
+        }
+        nav ul li a:hover {
+            text-decoration: underline; 
+        }
+        main {
+            padding: 20px; 
+            flex: 1; 
+        }
+        .content-box {
+            color: white;
+            border-radius: 15px; 
+            margin-left: 70px;
+            margin-right: 10px;
+            padding: 10px; 
+            width: 89%; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .video-container {
+            display: flex;
+            align-items: center;
+            gap: 90px;
+            margin-top: 30px;
+        }
+        .video-container iframe {
+            width: 680px;
+            height: 315px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #050836;
+            color: #E5C58F; 
+            text-align: center; 
+            padding: 10px; 
+        }
+    </style>
+    <title>Glossary of Terms</title>
+    {% load static %}
+</head>
+<body>
+    <main>
+        <div class="content-box">
+            <div class="video-container">
+                <h1>Glossary of Terms</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/inWWhr5tnEA?si=i2UigDFFnR-NV-K8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            </div>
+            <div class="cyber">
+                <h2>Certifications to consider for a career in cybersecurity</h2>
+                
+            </div>
+            <dl>
+                <dt>Access Control List (ACL):</dt>
+                <dd>A set of rules used to control network traffic and reduce network attacks by specifying which users or systems can access certain resources.</dd>
+
+                <dt>Bandwidth:</dt>
+                <dd>The maximum rate of data transfer across a network path, typically measured in bits per second (bps).</dd>
+
+                <dt>Cloud Computing:</dt>
+                <dd>The delivery of computing services (servers, storage, databases, networking, software) over the Internet (“the cloud”) to offer faster innovation, flexible resources, and economies of scale.</dd>
+
+                <dt>Cryptography:</dt>
+                <dd>The practice and study of techniques for securing communication and information through the use of codes.</dd>
+
+                <dt>Denial of Service (DoS):</dt>
+                <dd>An attack that aims to make a machine or network resource unavailable to its intended users by overwhelming it with a flood of illegitimate requests.</dd>
+
+                <dt>Encryption:</dt>
+                <dd>The process of converting information or data into a code to prevent unauthorized access.</dd>
+
+                <dt>Firewall:</dt>
+                <dd>A network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules.</dd>
+
+                <dt>IP Address:</dt>
+                <dd>A unique identifier for a device on a network, used for communication between devices.</dd>
+
+                <dt>Intrusion Detection System (IDS):</dt>
+                <dd>A device or software application that monitors a network or systems for malicious activity or policy violations.</dd>
+
+                <dt>Network Protocol:</dt>
+                <dd>A set of rules governing the format of messages exchanged between computers on a network.</dd>
+
+                <dt>Network Topology:</dt>
+                <dd>The arrangement of different elements (links, nodes, etc.) in a computer network.</dd>
+
+                <dt>Packet Sniffer:</dt>
+                <dd>A tool used to capture and analyze network traffic.</dd>
+
+                <dt>Phishing:</dt>
+                <dd>A method of trying to gather personal information using deceptive e-mails and websites.</dd>
+
+                <dt>Router:</dt>
+                <dd>A device that forwards data packets between computer networks, directing traffic on the Internet.</dd>
+
+                <dt>Subnet:</dt>
+                <dd>A logical subdivision of an IP network, allowing for better management of the network.</dd>
+
+                <dt>Vulnerability:</dt>
+                <dd>A weakness in a system that can be exploited by attackers to gain unauthorized access or perform unauthorized actions.</dd>
+
+                <dt>Wi-Fi:</dt>
+                <dd>A technology that allows electronic devices to connect to a wireless LAN (Local Area Network), typically using the 2.4 GHz or 5 GHz radio bands.</dd>
+            </dl>
+        </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Network Analyser. All rights reserved.</p>
+        </footer>
+   </body>
+</html>

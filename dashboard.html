@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #19053d 60%, #4a2371);
+            color: black;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        h1{
+            font-size: 50px;
+            color: #19053d;
+            border-radius: 10px;
+            font-family: Helvetica;
+        }
+        h3{
+            height: 30px;
+            width: 200px;
+            background-color: #19053d;
+            color: white;
+            font-family: Helvetica;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .dashboard-container {
+            height: 620px;
+            width: 1300px;
+            margin-top: 40px;
+            margin-left: 80px;
+            margin-right: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        .container{
+            height: auto;
+            width: auto;
+            background: transparent;
+            color: black;
+            border-radius: 10px;
+            border-color: #19053d;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .container1{
+            height: auto;
+            width: auto;
+            background: transparent;
+            color: black;
+            border-radius: 10px;
+            border-color: #19053d;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .alert-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Hi, {{ username }}! Welcome to the Dashboard</h1>
+            <h2>"Your Network at a Glance – Secure, Monitor, Excel!"</h2>
+        </header>
+
+        {% if alert_message %}
+            <div class="alert-message">
+                <strong>Alert:</strong> {{ alert_message }}
+            </div>
+        {% endif %}
+
+        <h3>Network Scan Result</h3>
+        <div class="container">
+        {% if devices %}
+            <ul>
+                {% for device in devices %}
+                    <li>IP: {{ device.ip }}, MAC: {{ device.mac }}, Hostname: {{ device.hostname }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No devices detected yet.</p>
+        {% endif %}
+        </div>
+
+        <h3>External Scan Result</h3>
+        <div class="container1">
+        <p>{{ request.session.external_scan_result|default:"No external scans yet." }}</p>
+        </div>
+    </div>
+</body>
+</html>

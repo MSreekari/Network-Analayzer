@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+
+            color : #E5C58F;
+        }
+        h1{
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 70px;
+            margin-top: 60px;
+            margin-bottom: 0px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+            width: 100%;
+            height: auto;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            margin-top: 100px;
+        }
+        .card1, .card2, .card3, .card4, .card5, .card6 {
+            width: 350px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-width: 4px;
+            border-style: solid;
+            border-color: #E5C58F;
+            background-color: #E5C58F;
+            color: #052D37;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card1 .img, .card2 .img, .card3 .img, .card4 .img, .card5 .img, .card6 .img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .card1 .img img, .card2 .img img, .card3 .img img, .card4 .img img, .card5 .img img, .card6 .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .btn{
+            text-decoration: none;
+            color: black;
+            background-color: #E55C3E;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #d44a29; 
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #b3361b;
+            transform: scale(0.98);
+        }
+        .card3{
+            h4{
+                margin-left: 30px;
+            }
+        }
+    </style>
+    <title>Education</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Step into the future of security</h1>
+    <div class="container">
+        <div class="card1">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image3.jpg' %}">
+            </div>
+            <h4>Networking Basics</h4>
+            <button class="btn" onclick="window.location.href='/networking-basics'">Start Learning</button>
+        </div>
+        <div class="card2">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image4.jpg' %}">
+            </div>
+            <h4>Network Scanning</h4>
+            <button class="btn" onclick="window.location.href='/network-scanning'">Start Learning</button>
+        </div>
+        <div class="card3">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image5.jpg' %}">
+            </div>
+            <h4>Cybersecurity Fundamentals</h4>
+            <button class="btn" onclick="window.location.href='/cybersecurity-fundamentals'">Start Learning</button>
+        </div>
+        <div class="card4">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image6.jpg' %}">
+            </div>
+            <h4>Hands-on Learning</h4>
+            <button class="btn" onclick="window.location.href='/hands-on-learning'">Start Learning</button>
+        </div>
+        <div class="card5">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image7.jpg' %}">
+            </div>
+            <h4>Networking Tools</h4>
+            <button class="btn" onclick="window.location.href='/networking-tools'">Start Learning</button>
+        </div>
+        <div class="card6">
+            <div class="img">
+                <img src="{% static 'networkapp/images/Image8.jpg' %}">
+            </div>
+            <h4>Glossary of terms</h4>
+            <button class="btn" onclick="window.location.href='/glossary-of-terms'">Start Learning</button>
+        </div>
+    </div>
+</body>
+</html>

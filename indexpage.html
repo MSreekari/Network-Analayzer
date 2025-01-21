@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(135deg, #19053d 60%, 80%, #4a2371);
+
+            color : #E5C58F;
+        }
+        .header {
+            padding: 10px 0;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+        .nav {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-right: 300px;
+            font-size: 17px;
+        }
+        .nav-item {
+            margin: 0 50px;
+        }
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: #f0f0f0;
+        }
+        .header .d-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .title {
+            font-family: Poppins;
+            font-size: 100px;
+            font-weight: bolder;
+            line-height: 70px;
+            margin-top: 60px;
+            margin-bottom: 0px;
+            margin-left: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .btn{
+            margin: 30px 50px 4px 90px;
+            text-decoration: none;
+            color: black;
+            background-color: #E55C3E;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            }
+        .btn:hover {
+            background-color: #d44a29; 
+            transform: scale(1.05);
+        }
+        .btn:active {
+            background-color: #b3361b; 
+            transform: scale(0.98);
+        }
+        p{
+            font-family: "Playwrite DK Loopet", cursive;
+            margin-left: 32px;
+            font-size: 30px;
+            font-weight: bolder;
+            margin-top: 80px;
+        }
+        h2{
+            font-family: "Poppins";
+            text-align: center;
+            color: black;
+        }
+        .icon-large {
+            font-size: 48px;
+            color: #f76c44;
+            margin-left: 20px;
+        }
+        .align-items-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        #overview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 70px;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        .btn:disabled {
+            background-color: #f76c44;
+            color: black;
+        }
+        .btn:disabled:hover{
+            cursor: not-allowed; 
+            opacity: 0.6; 
+        }
+        .login{
+            margin-right: 20px;
+            margin-left: auto;
+            text-decoration: none;
+            color: black;
+            border-color: #E55C3E;
+            border-width: 4px;
+            color : #E55C3E;
+            background-color: transparent;
+            padding: 10px 20px;
+            text-align: right;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+        .login:hover {
+            background-color: #d44a29; 
+            color : black;
+            transform: scale(1.05);
+        }
+        .login:active {
+            background-color: #b3361b;
+            color : black;
+            transform: scale(0.98);
+        }
+        .blur-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: none;
+            z-index: 1;
+        }
+        #options{
+            display: none;
+        }
+        .options-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            z-index: 2;
+            max-width: 800px;
+        }
+        .content-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .text{
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .options-container button {
+            margin: 10px;
+            padding: 10px 120px;
+            background-color: #E55C3E;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .options-container button:hover {
+            background-color: #d44a29;
+        }
+    </style> 
+    <title>Network Analyser</title>
+    {% load static %}
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'features' %}">Features</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'education' %}">Education</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'dashboard' %}">Dashboard</a></li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <form method="POST" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="login">Logout</button>
+                    </form>                    
+                    {% else %}
+                    <form method="GET" action="{% url 'login' %}">
+                    <button class="login" onclick="window.location.href='/login'">Login</button>
+                    </form>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </header> 
+    <main class="container mt-4">
+        <section id="overview" class="text-center mb-4">
+            <h1 class="title">Network Analyser</h1>
+            <p>Optimize and secure your network with ease.</p>
+            <button type="button" class="btn" 
+            {% if not user.is_authenticated %}disabled{% else %}onclick="showOptions()"{% endif %}>
+            Start Scanning
+            </button>
+            <!-- Hidden option buttons -->
+            <div id="options" class="options-container">
+                <div class="img">
+                    <img src = "{% static 'networkapp/images/Image10.jpg' %}" alt = "Start Scanning" class="img10">
+                </div>
+                <div class="content-container">
+                        <h2 class="text">Please Select an Option</h2>
+                    <button type="button" onclick="window.location.href='/scan'">Scan Your Network</button>
+                    <button type="button" onclick="window.location.href='/scanExternal'">Scan External IP</button>
+                    <button type="button" onclick="hideOptions()">Cancel</button>
+                </div>
+            </div>
+            <div id="blur" class="blur-background"></div>
+        </section>
+    </main>
+    <script>
+        function showOptions() {
+            document.getElementById('options').style.display = 'flex';
+            document.getElementById('blur').style.display = 'block'; 
+        }
+        function hideOptions() {
+            document.getElementById('blur').style.display = 'none';
+            document.getElementById('options').style.display = 'none'; 
+        }
+    </script>
+</body>
+</html>
